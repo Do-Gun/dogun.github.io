@@ -2,6 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
+published: false  # 이 줄 추가
 description: Materials for courses you taught. Replace this text with your description.
 nav: true
 nav_order: 6

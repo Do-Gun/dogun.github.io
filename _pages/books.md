@@ -1,6 +1,7 @@
 ---
 layout: book-shelf
 title: bookshelf
+published: false  # 이 줄 추가
 permalink: /books/
 nav: false
 collection: books

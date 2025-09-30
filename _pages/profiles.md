@@ -2,6 +2,7 @@
 layout: profiles
 permalink: /people/
 title: people
+published: false  # 이 줄 추가
 description: members of the lab or group
 nav: true
 nav_order: 7
