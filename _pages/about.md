@@ -29,7 +29,7 @@ latest_posts:
 
 Hello! I am a B.S. student in **Department of Artificial Intelligence, University of Seoul (UOS)**. I am currently a Research Intern at <a href='https://www.kist.re.kr/ko/research/advanced-materials-humanoidgreeting.do'>Humanoid Research Center, AI·Robotics Institute, KIST</a>. I will be joining **CCS Graduate School of Mobility, KAIST** as a master's student in 2026.03. My research interests include **End-to-End Autonomous Driving**, **Vision Language Action Model (VLA)**, **Robotics**, and **Computer Vision**.
 
-
+------
 ## Contact
 
 - **Email:** dogun.kim@kaist.ac.kr
@@ -60,5 +60,12 @@ Hello! I am a B.S. student in **Department of Artificial Intelligence, Universit
 
 - Hankyeol Lee, Kyounggyu Lee, Gawon Seo, **Dogun Kim**, Kyungwoo Song, Jiyoung Jung, "Generating Accurate and Detailed Captions for High-Resolution Images", WACV 2026 (submitted)
 
+## Activities
+
+- Korea University Student Automobile Research Forum (KUSARF) (2024.08 – Present)
+- Hyundai-Mobility Class: Autonomous Driving Track - Perception Field (2025)
+- Hyundai-Mobility Class: Autonomous Driving Track - Decision-making Field (2025)
+
+------
 
 
