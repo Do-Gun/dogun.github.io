@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://dogun.github.io/sitemap.xml
+Sitemap: https://dogun.github.io/dogun.github.io/sitemap.xml
