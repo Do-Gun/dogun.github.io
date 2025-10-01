@@ -407,14 +407,14 @@ ninja.data = [{
           section: "News",},{id: "news-admitted-to-ccs-graduate-school-of-mobility-kaist-for-spring-2026",
           title: 'Admitted to CCS Graduate School of Mobility, KAIST for Spring 2026!',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-adversarial-attacks-on-lvlm-autonomous-driving",
+          title: 'Adversarial Attacks on LVLM Autonomous Driving',
+          description: "Testing safety vulnerabilities in vision-language models for self-driving systems.University of Seoul, Reliable and Trustworthy AI CourseTeam: Dogun Kim, Donghoon Kang",
           section: "Projects",handler: () => {
               window.location.href = "/dogun.github.io/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-autonomous-driving-competition",
+          title: 'Autonomous Driving Competition',
+          description: "The 4th International University Students Autonomous EV Driving CompetitionChairman&#39;s Award Winner!International e-Mobility Expo, Global EV Association NetworkTeam: Gungyoung Ko, Dogun Kim, Taehee Lee, Sungmin Yoon, Subin Lee",
           section: "Projects",handler: () => {
               window.location.href = "/dogun.github.io/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
