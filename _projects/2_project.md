@@ -23,13 +23,13 @@ This project was conducted for The 4th International University Students Autonom
 
 ---
 
-# Competition Overview
+# Competition Introduction
 
-**Competition Introduction**
+**Competition**
 
 <div class="row mt-3">
     <div class="col-sm-6 mt-3 mt-md-0 mx-auto">
-        {% include figure.liquid path="assets/img/ad/2.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/ad/poster.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -126,7 +126,7 @@ Zhang's Method was employed to accurately calculate camera intrinsic parameters 
 
 <div class="row mt-3">
     <div class="col-sm-6 mt-3 mt-md-0 mx-auto">
-        <img src="{{ 'assets/img/ad/2.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="width: 100%; height: auto;">
+        <img src="{{ 'assets/img/ad/40.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="width: 100%; height: auto;">
     </div>
 </div>
 <div class="caption">
@@ -137,7 +137,7 @@ Zhang's Method was employed to accurately calculate camera intrinsic parameters 
 
 <div class="row">
     <div class="col-sm-3 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ad/10.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/ad/LiDAR.png" class="img-fluid rounded z-depth-1" %}
         <div class="caption"><strong>RPLIDAR A1</strong></div>
     </div>
     <div class="col-sm-3 mt-3 mt-md-0">
@@ -161,7 +161,7 @@ Zhang's Method was employed to accurately calculate camera intrinsic parameters 
 
 <div class="row mt-3">
     <div class="col-sm-6 mt-3 mt-md-0 mx-auto">
-        <img src="{{ 'assets/img/ad/3.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="width: 100%; height: auto;">
+        <img src="{{ 'assets/img/ad/60.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="width: 100%; height: auto;">
     </div>
 </div>
 <div class="caption">
