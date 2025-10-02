@@ -1,13 +1,13 @@
 ---
 layout: page
 title: Adversarial Attacks on LVLM Autonomous Driving
-description: "Testing safety vulnerabilities in vision-language models for self-driving systems.<br><br>University of Seoul, Reliable and Trustworthy AI Course<br>Team: Dogun Kim, Donghoon Kang"
+description: "Testing safety vulnerabilities in vision-language models for self-driving systems.<br><br><br>University of Seoul, Reliable and Trustworthy AI Course<br>Team: Dogun Kim, Donghoon Kang"
 img: assets/img/rtai/22.gif
 importance: 1
 category: work
 ---
 
-## Overview
+## 0. Overview
 
 <div class="row">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -23,7 +23,7 @@ We investigate the reliability and vulnerability of LVLM-based autonomous drivin
 
 ---
 
-## Motivation
+## 1. Motivation
 
 ### Background: The Rise of LVLMs in Autonomous Driving
 
@@ -85,7 +85,7 @@ Given these critical safety concerns, our project aims to:
 
 ---
 
-## Method
+## 2. Method
 
 Our attack pipeline transforms dangerous commands into visual prompts to bypass safety filters.
 
@@ -158,7 +158,7 @@ To overcome this, we engineered domain-specific prompts that explicitly instruct
 
 ---
 
-## Experiment
+## 3. Experiment
 
 **Model:** LMDrive (CVPR 2024) with LLaMA-7B backbone
 
@@ -190,7 +190,7 @@ We trained the model with intentionally injected misleading instructions to veri
 
 ---
 
-## Results
+## 4. Results
 
 ### Successful Attacks
 
@@ -219,7 +219,7 @@ Second, and more significantly, the attack consistently failed to induce behavio
 
 ---
 
-## Future Work
+## 5. Future Work
 
 Based on our findings and the limitations observed, several research directions remain open:
 

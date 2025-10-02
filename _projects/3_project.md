@@ -1,81 +1,237 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Open-Vocabulary Object Detection on Edge Device
+description: "YOLO-World deployment on Jetson Xavier NX for Safety and Security Applications<br><br>University of Seoul, Intelligent Robotics Course<br>Team: Dogun Kim, Gawon Seo"
+img: assets/img/ovod/1.gif
 importance: 3
 category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## 0. Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+YOLO-World 기반 Open-Vocabulary Object Detection 시스템을 Jetson Xavier NX에 실시간 배포하여 사이렌 오더 도난 방지, 용의자 추적 등 안전/보안 응용 분야에 적용한 프로젝트입니다.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+**Key Features**:
+- 사전 정의된 클래스 없이 자유로운 텍스트 입력으로 객체 검출
+- 웹 인터페이스를 통한 사용자 친화적 접근
+- Fine-tuning으로 작은 객체/밀집 객체 성능 개선
+
+<div class="row">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/1.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>실시간 Open-Vocabulary Detection 데모</strong></div>
+    </div>  
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/2.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>NVIDIA Jetson Xavier NX</strong></div>
+    </div>
+</div>
+
+---
+
+## 1. Motivation
+
+### Real-world Problems
+- **사이렌 오더 도난**: 카페에서 고객 인상착의 기반 추적 필요
+- **미아 찾기/용의자 추적**: CCTV 영상에서 특정 인물 검거
+
+### Traditional Object Detection의 한계
+- 사전 정의된 클래스(80개 COCO classes)만 검출 가능
+- "빨간 옷 입은 사람", "흰 모자 쓴 남성" 등 세부 특징 검출 불가
+
+### Open-Vocabulary Solution
+- 임의의 text description으로 zero-shot detection
+- "person in blue shirt", "the tallest person" 등 자유로운 표현 가능
+- 재학습 없이 즉시 새로운 객체 검출
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <img src="{{ 'assets/img/ovod/3.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>Open-Vocabulary Setting: 사전 정의된 클래스 없이 자유로운 텍스트로 객체 검출</strong></div>
     </div>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
+
+---
+
+## 2. Method
+
+### YOLO-World (CVPR 2024)
+- **Architecture**: CLIP + YOLO 결합
+- **특징**: 
+  - Open-vocabulary zero-shot detection
+  - Text 기반 유연한 객체 검색
+  - Real-time 추론 속도 (기존 대비 20배 빠름)
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <img src="{{ 'assets/img/ovod/4.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>YOLO-World 모델 아키텍처</strong></div>
     </div>
 </div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+
+### Issues Discovered
+
+- **Issue 1: Closely Packed Objects 검출 실패**
+- **Issue 2: Small Object Detection 성능 저하**
+
+
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/5.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>초기 모델의 한계: 작은 객체와 밀집된 객체 검출 실패</strong></div>
+    </div>
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Fine-tuning Solution
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/6.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>Fine-tuning 전략: 도메인 특화 데이터셋으로 성능 개선</strong></div>
+    </div>
+</div>
+
+**데이터셋**:
+- **SKU-110k**: 밀집 상품 객체 (Issue 1 해결)
+- **VisDrone**: 드론 촬영의 작은 사람, 차량 (Issue 2 해결)
+
+**학습 설정**:
+- 20 epochs, batch 16, image 640px
+- Learning rate: 0.01 → 0.0001 (cosine decay)
+
+---
+
+## 3. Results
+
+### Performance Improvement
+
+#### SKU-110k Dataset
+**성능 개선**: mAP@50 0.097 → **0.926** 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/7.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>SKU-110k Fine-tuning 학습 곡선</strong></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 mt-3 mt-md-0 mx-auto">
+        <img src="{{ 'assets/img/ovod/8.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>SKU-110k 정량적 평가: Precision 0.192 → 0.914, Recall 0.011 → 0.872</strong></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/9.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>SKU-110k 정성적 평가: Fine-tuning 전후 밀집 객체 검출 성능 비교</strong></div>
+    </div>
+</div>
+
+#### VisDrone Dataset
+**성능 개선**: mAP@50 0.052 → **0.426** 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/10.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>VisDrone Fine-tuning 학습 곡선</strong></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 mt-3 mt-md-0 mx-auto">
+        <img src="{{ 'assets/img/ovod/11.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>VisDrone 정량적 평가: Precision 0.071 → 0.527, Recall 0.079 → 0.414</strong></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/12.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong>VisDrone 정성적 평가: Fine-tuning 전후 작은 객체 검출 성능 비교</strong></div>
+    </div>
+</div>
+
+#### Final Performance
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/30.png' | relative_url }}" class="img-fluid rounded z-depth-1">
+        <div class="caption"><strong> 최종 Fine-tuning 정성 평가</strong></div>
+    </div>
+</div>
+
+---
+
+## 4. Demo
+
+### Web Demo - Zero-shot Image Detection
+
+<div class="row">
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/13.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 300px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>차량 세부 파츠 검출</strong></div>
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <img src="{{ 'assets/img/ovod/14.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 300px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>동물 세부 구조 검출</strong></div>
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/15.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 300px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>인물 특징 검출</strong></div>
     </div>
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+
+### Real-time Demo
+
+<div class="row">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/1.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>실시간 카메라 검출 - 연구실 환경</strong></div>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/16.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>다양한 free-form text 입력 처리</strong></div>
+    </div>
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+Input Text: white desk, red pen, blue pen, black pen, black monitor, blue chair, person in black shirt, white board, person in white shirt, water bottle, cup of coffee, black keyboard, orange book, orange cup, instant cup ramen, red straw
 
-{% raw %}
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+---
+
+## 5. Applications
+
+### Case 1: 사이렌 오더 도난 방지
+
+<div class="row">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/17.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>카페 전체 물체 검출</strong></div>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/18.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>인상착의 기반 추적</strong></div>
+    </div>
 </div>
-```
 
-{% endraw %}
+### Case 2: 용의자 추적 / 미아 방지
+
+<div class="row">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/19.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>원본 이미지</strong></div>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img src="{{ 'assets/img/ovod/20.png' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
+        <div class="caption"><strong>인상착의 기반 인물 검출</strong></div>
+    </div>
+</div>
+
+
+---
+
+## 6. Conclusion
+
+본 프로젝트는 Open-Vocabulary Detection의 실제 응용 가능성을 입증하고, Fine-tuning을 통해 작은 객체 및 밀집 객체 검출 성능을 대폭 개선하였습니다. Edge device 배포로 GPU가 없는 실제 CCTV 환경에서도 실용적으로 활용 가능한 시스템을 구축하였습니다.

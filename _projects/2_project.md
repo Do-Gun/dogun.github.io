@@ -7,7 +7,7 @@ importance: 2
 category: work
 ---
 
-# Overview
+## 0. Overview
 <div class="row">
     <div class="col-sm-6 mt-3 mt-md-0">
         <img src="{{ 'assets/img/ad/1.gif' | relative_url }}" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: contain;">
@@ -23,9 +23,9 @@ This project was conducted for The 4th International University Students Autonom
 
 ---
 
-# Competition Introduction
+## 1. Competition Introduction
 
-**Competition**
+### Competition
 
 <div class="row mt-3">
     <div class="col-sm-6 mt-3 mt-md-0 mx-auto">
@@ -38,7 +38,7 @@ This project was conducted for The 4th International University Students Autonom
 
 The 4th International University Students Autonomous EV Driving Competition is an international autonomous electric vehicle competition hosted by Global EV Association Network at the International e-Mobility Expo.
 
-**Track Sections and Constraints**
+### Track Sections and Constraints
 
 <div class="row mt-3">
     <div class="col-sm-8 mt-3 mt-md-0 mx-auto">
@@ -57,7 +57,7 @@ Each section requires the use of specific sensors, with strict disqualification 
 
 ---
 
-# Hardware Configuration
+## 2. Hardware Configuration
 
 <div class="row">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -81,9 +81,9 @@ All sensors are integrated through ROS framework, enabling real-time data proces
 
 ---
 
-# Methodology
+## 3. Method
 
-## Section A: Lane Following
+### Section A: Lane Following
 
 **1) Camera Calibration**
 
@@ -133,7 +133,7 @@ Zhang's Method was employed to accurately calculate camera intrinsic parameters 
     Section A Lane Following Final Result
 </div>
 
-## Section B: Obstacle Avoidance
+### Section B: Obstacle Avoidance
 
 <div class="row">
     <div class="col-sm-3 mt-3 mt-md-0">
@@ -168,7 +168,7 @@ Zhang's Method was employed to accurately calculate camera intrinsic parameters 
     Section B Obstacle Avoidance Final Result
 </div>
 
-## Section C: Odometry-based Localization
+### Section C: Odometry-based Localization
 
 **Technical Approach:**
 - Precision odometry implementation fusing IMU and encoder data
@@ -178,7 +178,7 @@ Zhang's Method was employed to accurately calculate camera intrinsic parameters 
 
 ---
 
-# Results
+## 4. Results
 
 <div class="row">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -200,7 +200,7 @@ Outstanding results were achieved through systematic system design while adherin
 
 ---
 
-# Limitations and Future Work
+## 5. Limitations and Future Work
 
 **Limitations:**
 - Sensitivity of lane detection algorithm to lighting variations
