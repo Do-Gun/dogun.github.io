@@ -417,19 +417,19 @@ ninja.data = [{
           description: "The 4th International University Students Autonomous EV Driving CompetitionChairman&#39;s Award Winner!International e-Mobility Expo, Global EV Association NetworkTeam: Gungyoung Ko, Dogun Kim, Taehee Lee, Sungmin Yoon, Subin Lee",
           section: "Projects",handler: () => {
               window.location.href = "/dogun.github.io/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-open-vocabulary-object-detection-on-edge-device",
+          title: 'Open-Vocabulary Object Detection on Edge Device',
+          description: "YOLO-World deployment on Jetson Xavier NX for Safety and Security ApplicationsUniversity of Seoul, Intelligent Robotics CourseTeam: Dogun Kim, Gawon Seo",
           section: "Projects",handler: () => {
               window.location.href = "/dogun.github.io/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-fine-grained-image-classification-competition",
+          title: 'Fine-Grained Image Classification Competition',
+          description: "2025 Deep Learning Winter CompetitionPresidential Award Winner!University of Seoul, AICOSSTeam: Dogun Kim, Donghoon Kang, Jungeun Kim, Junyong Lim",
           section: "Projects",handler: () => {
               window.location.href = "/dogun.github.io/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-multi-modal-learning-for-autonomous-driving-with-nighttime-data-augmentation",
+          title: 'Multi-Modal Learning for Autonomous Driving with Nighttime Data Augmentation',
+          description: "GAN-based Multimodal Training Data Construction and LearningCreativity Award Winner! 과학기술정보통신부 / 한국연구재단Team: Dogun Kim, Gawon Seo",
           section: "Projects",handler: () => {
               window.location.href = "/dogun.github.io/projects/5_project/";
             },},{id: "projects-project-6",
